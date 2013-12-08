@@ -11,7 +11,7 @@ case $1 in
     if [[ $? == 0 ]];
     then
         logger "Internet connectivity detected, running duply"
-        sudo su - ahill -c "export DISPLAY=:0 && nohup duply rax-swift backup > /home/ahill/swift.backup &"
+        sudo su - %u -c "export DISPLAY=:0 && nohup duply swift backup > /home/%u/swift.backup &"
         break;
     else
         logger "Waiting for internet connectivity..."
